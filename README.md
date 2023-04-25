@@ -1,11 +1,11 @@
 # AWS CLI commands
 
 ### Creating a key pair:
-    ```
+
     aws ec2 create-key-pair --key-name MyKeyPair \
         --query 'KeyMaterial' \
         --output text > MyKeyPairCli.pem
-    ```    
+   
 
 
 ### Deleting a key pair:
