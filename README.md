@@ -1,4 +1,4 @@
-
+# AWS CLI commands
 
 ### Creating a key pair:
     aws ec2 create-key-pair --key-name MyKeyPairCli --query 'KeyMaterial' --output text > MyKeyPairCli.pem
