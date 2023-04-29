@@ -25,7 +25,6 @@
         --vpc-id vpc-xxxxx
 
 
-
 #### Allow specific ports:
     aws ec2 authorize-security-group-ingress --group-id sg-xxxxxx \
         --protocol tcp --port 22 --cidr 0.0.0.0/0
@@ -33,6 +32,9 @@
     aws ec2 authorize-security-group-ingress --group-id sg-xxxxxx \
         --protocol tcp --port 80 --cidr 0.0.0.0/0
 
+
+#### Deleting a security group:
+    aws ec2 delete-security-group --group-id
 
 ###### The docs:
 https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-keypairs.html#cli-services-ec2-keypairs-prereqs
