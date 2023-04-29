@@ -18,7 +18,9 @@
 ## 2. Security groups:
 
 #### Creating a security group:
-    aws ec2 create-security-group --group-name my-new-sg-from-cli --description "My new security group from cli" --vpc-id vpc-xxxxx
+    aws ec2 create-security-group --group-name my-new-sg-from-cli \
+        --description "My new security group from cli" \
+        --vpc-id vpc-xxxxx
 
 
 
