@@ -52,8 +52,8 @@
 
 
 
-
-###### **Desclimer:**
+<br />
+###### **DISCLAIMER:**
 Please consult the official documentation before using.
 NOBODY BUT YOU IS RESPONSIBLE FOR ANY USE OR DAMAGE THIS COMMANDS MAY CAUSE.
 THIS IS INTENDED FOR EDUCATIONAL PURPOSES ONLY. USE AT YOUR OWN RISK.
