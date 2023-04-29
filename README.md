@@ -1,5 +1,6 @@
 # **AWS CLI commands - collection for basic tasks**
 
+
 ## 1. IAM
 
 #### Creating a key pair:
@@ -12,6 +13,7 @@
 
 #### Deleting a key pair:
     aws ec2 delete-key-pair --key-name MyKeyPair
+
 
 
 
