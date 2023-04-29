@@ -29,7 +29,7 @@
 #### Allow specific ports:
     aws ec2 authorize-security-group-ingress --group-id sg-xxxxxx \
         --protocol tcp --port 22 --cidr 0.0.0.0/0
-<br />
+
     aws ec2 authorize-security-group-ingress --group-id sg-xxxxxx \
         --protocol tcp --port 80 --cidr 0.0.0.0/0
 
