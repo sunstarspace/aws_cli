@@ -25,7 +25,8 @@
         --vpc-id vpc-xxxxxxx
 
 
-#### Allow specific ports:
+
+#### Allow specific inbound ports:
     aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx \
         --protocol tcp --port 22 --cidr 0.0.0.0/0
 
@@ -60,4 +61,4 @@ NOBODY BUT YOU IS RESPONSIBLE FOR ANY USE OR DAMAGE THIS COMMANDS MAY CAUSE.
 THIS IS INTENDED FOR EDUCATIONAL PURPOSES ONLY. USE AT YOUR OWN RISK.
 
 ###### The docs:
-https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-keypairs.html#cli-services-ec2-keypairs-prereqs
+https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
