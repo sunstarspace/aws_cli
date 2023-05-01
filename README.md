@@ -4,14 +4,14 @@
 
 ## IAM - Key Pair
 
-#### Creating a key pair:
+#### Create a key pair:
 
     aws ec2 create-key-pair --key-name MyKeyPair \
     --query 'KeyMaterial' \
     --output text > MyKeyPairCli.pem
    
 
-#### Deleting a key pair:
+#### Delete a key pair:
     aws ec2 delete-key-pair --key-name MyKeyPair
 <br />
 <br />
@@ -21,27 +21,27 @@
 
 ## IAM - Groups
 
-### Create a group
+#### Create a group
     aws iam create-group --group-name TestGroup --profile mgmt
 
-### Attach policy to group
+#### Attach policy to group
     aws iam attach-group-policy \
     --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess \
     --group-name TestGroup --profile mgmt
 
-### Add user to group
+#### Add user to group
     aws iam add-user-to-group --user-name myuser\
     --group-name TestGroup --profile mgmt
 
-### Remove user from group
+#### Remove user from group
     aws iam remove-user-from-group --user-name myuser \
     --group-name TestGroup --profile mgmt
 
-### Detach policy from group
+#### Detach policy from group
     aws iam detach-group-policy --group-name TestGroup \
     --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess --profile mgmt
 
-### Delete a group
+#### Delete a group
     aws iam delete-group --group-name TestGroup --profile mgmt
 <br />
 <br />
@@ -51,7 +51,7 @@
 
 ## Security groups
 
-#### Creating a security group:
+#### Create a security group:
     aws ec2 create-security-group --group-name my-new-sg-from-cli \
     --description "My new security group from cli" \
     --vpc-id vpc-xxxxxxx
@@ -66,7 +66,7 @@
     --protocol tcp --port 80 --cidr 0.0.0.0/0
 
 
-#### Deleting a security group:
+#### Delete a security group:
     aws ec2 delete-security-group --group-id sg-xxxxxxx
 
 <br />
