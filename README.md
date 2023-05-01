@@ -24,20 +24,20 @@
 #### Create a group
     aws iam create-group --group-name TestGroup --profile mgmt
 
-#### Attach policy to group
+#### Attach policy to a group
     aws iam attach-group-policy \
     --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess \
     --group-name TestGroup --profile mgmt
 
-#### Add user to group
+#### Add user to a group
     aws iam add-user-to-group --user-name myuser\
     --group-name TestGroup --profile mgmt
 
-#### Remove user from group
+#### Remove user from a group
     aws iam remove-user-from-group --user-name myuser \
     --group-name TestGroup --profile mgmt
 
-#### Detach policy from group
+#### Detach policy from a group
     aws iam detach-group-policy --group-name TestGroup \
     --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess --profile mgmt
 
@@ -83,6 +83,27 @@
     --security-group-ids sg-xxxxxxx \
     --subnet-id subnet-xxxxxxx \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=ec2-from-cli}]'
+
+
+#### Create an EBS volume:
+    aws ec2 create-volume \
+    --availability-zone eu-central-1a \
+    --volume-type gp2 \
+    --size 5 \
+    --tag-specifications 'ResourceType=volume,Tags=[{Key=PURPOSE,Value=TEST},{Key=CREATED-FROM,Value=AWS-CLI}]'
+
+
+#### Add tags to an EBS volume:
+    aws ec2 create-tags \
+    --resources vol-xxxxxxx \
+    --tags Key=Name,Value=MyVolFromCli
+
+
+#### Attach an EBS volume to an EC2 instance:
+    aws ec2 attach-volume \
+    --volume-id vol-xxxxxxx \
+    --instance-id i-xxxxxxx \
+    --device /dev/sdf
 
 
 
