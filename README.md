@@ -2,7 +2,7 @@
 
 <br />
 
-## 1. IAM
+## IAM - Key Pair
 
 #### Creating a key pair:
 
@@ -13,54 +13,13 @@
 
 #### Deleting a key pair:
     aws ec2 delete-key-pair --key-name MyKeyPair
-
+<br />
 <br />
 
 
-## 2. Security groups
-
-#### Creating a security group:
-    aws ec2 create-security-group --group-name my-new-sg-from-cli \
-    --description "My new security group from cli" \
-    --vpc-id vpc-xxxxxxx
 
 
-
-#### Allow specific inbound ports:
-    aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx \
-    --protocol tcp --port 22 --cidr 0.0.0.0/0
-
-    aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx \
-    --protocol tcp --port 80 --cidr 0.0.0.0/0
-
-
-#### Deleting a security group:
-    aws ec2 delete-security-group --group-id sg-xxxxxxx
-
-
-<br />
-
-## 3. EC2
-
-#### Create an EC2 instance:
-    aws ec2 run-instances --image-id ami-xxxxxxx --count 1 \
-    --instance-type t2.micro --key-name MyKeyPair \
-    --security-group-ids sg-xxxxxxx \
-    --subnet-id subnet-xxxxxxx \
-    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=ec2-from-cli}]'
-
-
-
-<br />
-
-## 4. Organizations:
-
-
-
-
-
-<br />
-
+## IAM - Groups
 
 ### Create a group
     aws iam create-group --group-name TestGroup --profile mgmt
@@ -84,9 +43,66 @@
 
 ### Delete a group
     aws iam delete-group --group-name TestGroup --profile mgmt
+<br />
+<br />
+
+
+
+
+## Security groups
+
+#### Creating a security group:
+    aws ec2 create-security-group --group-name my-new-sg-from-cli \
+    --description "My new security group from cli" \
+    --vpc-id vpc-xxxxxxx
+
+
+
+#### Allow specific inbound ports:
+    aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx \
+    --protocol tcp --port 22 --cidr 0.0.0.0/0
+
+    aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxx \
+    --protocol tcp --port 80 --cidr 0.0.0.0/0
+
+
+#### Deleting a security group:
+    aws ec2 delete-security-group --group-id sg-xxxxxxx
+
+<br />
+<br />
+
+
+
+
+## EC2
+
+#### Create an EC2 instance:
+    aws ec2 run-instances --image-id ami-xxxxxxx --count 1 \
+    --instance-type t2.micro --key-name MyKeyPair \
+    --security-group-ids sg-xxxxxxx \
+    --subnet-id subnet-xxxxxxx \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=ec2-from-cli}]'
+
 
 
 <br />
+<br />
+
+
+
+
+## Organizations:
+    .......
+
+
+
+
+<br />
+
+
+
+
 
 
 ###### **DISCLAIMER**
