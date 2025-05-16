@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{job_yaml_file_params:jobname}}
+spec:
+  template:
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: busybox0
+        image: busybox
+        command: ["echo",  "Hello {{job_yaml_file_params:subject}}"]
+      restartPolicy: Never
+  backoffLimit: 4
