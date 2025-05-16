@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{job_yaml_file_params:jobname}}
+  name: testjob
 spec:
   template:
     spec:
@@ -10,6 +10,6 @@ spec:
       containers:
       - name: busybox0
         image: busybox
-        command: ["echo",  "Hello {{job_yaml_file_params:subject}}"]
+        command: ["echo",  "Hello from test job!!!"]
       restartPolicy: Never
   backoffLimit: 4
